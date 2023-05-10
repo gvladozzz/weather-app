@@ -21,8 +21,6 @@ def show_data(city, country, temperature, wind_speed, humidity, pressure):
 def get_weather():
     city = entry.get()
     url = BASE_URL+"key="+API_KEY+"&q="+city
-    print(url)
-
     try:
         response = requests.get(url)
         if response.status_code == 200:
