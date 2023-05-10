@@ -18,7 +18,7 @@ def show_data(city, country, temperature, wind_speed, humidity, pressure):
     pressure_label.configure(text=f"Pressure in {city}: {pressure}Pa")
 
 
-def get_weather():
+def get_weather(event):
     city = entry.get()
     url = BASE_URL+"key="+API_KEY+"&q="+city
     try:
@@ -80,5 +80,7 @@ button.place(relx=0.5, rely=0.6, anchor="center")
 all_data.grid(row=0, column=0, sticky='nsew')
 root.grid_rowconfigure(0, weight=1)
 root.grid_columnconfigure(0, weight=1)
+
+root.bind('<Return>', get_weather)
 
 root.mainloop()
