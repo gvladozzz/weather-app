@@ -18,7 +18,7 @@ def show_data(city, country, temperature, wind_speed, humidity, pressure):
     pressure_label.configure(text=f"Pressure in {city}: {pressure}Pa")
 
 
-def get_weather(event):
+def get_weather(*args):
     city = entry.get()
     url = BASE_URL+"key="+API_KEY+"&q="+city
     try:
